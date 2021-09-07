@@ -36,3 +36,29 @@ function sockMerchant(n, ar) {
 
     return count;
 }
+
+// method 2
+
+function sockMerchant(n, ar) {
+    // Write your code here
+    let op = {};
+
+    ar.forEach(el => {
+        if (op[el]) {
+            op[el] = op[el] + 1;
+        } else {
+            op[el] = 1
+        }
+    });
+
+    let count = 0;
+    // console.log("op ", op);
+    for (let key in op) {
+        let v = op[key];
+        if (v > 1) {
+            count += v == 2 ? 1 : Math.floor(v / 2)
+        }
+    }
+
+    return count
+}

@@ -1,4 +1,4 @@
-### Select
+### Basic Select
 ```
 // Revising the Select Query I
 SELECT * FROM CITY WHERE POPULATION > 100000 AND COUNTRYCODE = 'USA';
@@ -71,3 +71,5 @@ SELECT name FROM Employee ORDER BY name;
 // Employee Salaries
 SELECT name FROM Employee WHERE salary > 2000 AND months < 10 ORDER BY employee_id;
 ```
+
+### Advanced Select

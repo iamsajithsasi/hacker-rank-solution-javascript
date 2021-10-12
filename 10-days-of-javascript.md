@@ -6,8 +6,19 @@ function greeting(parameterVariable) {
     console.log(parameterVariable); 
 }
 ```
-# Day 1
 ### Data Types
+```
+const firstInteger = 4;
+const firstString = 'HackerRank ';
+console.log(parseInt(firstInteger) + parseInt(secondInteger));
+console.log(Number(firstDecimal) + Number(secondDecimal));
+console.log(firstString + secondString); 
+
+```
+# Day 1
+
+### Arithmetic Operators
+
 ```
 function getArea(length, width) {
     let area = length * width;
@@ -22,7 +33,6 @@ function getPerimeter(length, width) {
     
     return perimeter;
 }
-
 ```
 
 ### Functions
@@ -139,6 +149,18 @@ function getSecondLargest(nums) {
     return st[st.length - 2]
 }
 ```
+### Try, Catch, and Finally
+```
+function reverseString(s) {
+    try {
+     console.log(s.split("").reverse().join(""))
+    } catch(e) {
+        console.log(e.message);
+        console.log(s)
+    }
+}
+```
+
 ### Throw
 ```
 function isPositive(a) {
@@ -152,17 +174,6 @@ function isPositive(a) {
 }
 ```
 
-### Try, Catch, and Finally
-```
-function reverseString(s) {
-    try {
-     console.log(s.split("").reverse().join(""))
-    } catch(e) {
-        console.log(e.message);
-        console.log(s)
-    }
-}
-```
 # Day 4
 ### Create a Rectangle Object
 
@@ -180,6 +191,16 @@ function Rectangle(a, b) {
 }
 
 ```
+
+### Count Objects
+
+```
+function getCount(objects) {
+    let flt = objects.filter(item => item.x === item.y)
+    return flt.length;
+}
+```
+
 
 ### Classes
 
@@ -202,10 +223,86 @@ let triangle = new Polygon([3, 4, 5]);
 ```
 # Day 5
 
+### Inheritance
+```
+Rectangle.prototype.area = function() {
+    return this.w * this.h
+}
+
+class Square extends Rectangle {
+    constructor(s) {
+        super()
+        this.w = s;
+        this.h = s;
+    }
+}
+
+```
+### Template literals
+```
+```
+### Arrow Functions
+```
+function modifyArray(nums) {
+    let mod = nums.map(n => n % 2 === 0 ? n * 2 : n * 3);
+    return mod;
+}
+```
 # Day 6
+
+### Bitwise operators
+```
+```
+### Javascript Dates
+```
+function getDayName(dateString) {
+    let dayName;
+    // Write your code here
+    const day = new Date(dateString);
+    switch(day.getDay()) {
+        case 0:
+            dayName = 'Sunday'
+            break;
+        case 1:
+            dayName = 'Monday'
+            break;
+        case 2:
+            dayName = 'Tuesday'
+            break;
+        case 3:
+            dayName = 'Wednesday'
+            break;
+        case 4:
+            dayName = 'Thursday'
+            break;
+        case 5:
+            dayName = 'Friday'
+            break;
+        case 6:
+            dayName = 'Saturday'
+            break;
+        default:
+            dayName = 'Unknown'
+            break;
+    }
+    return dayName;
+}
+```
 
 # Day 7
 
+### Regular Expressions 1
+```
+```
+
+### Regular Expressions 2
+```
+```
+### Regular Expressions 3
+```
+```
+
+# Day 8
 ### Day 8: Create a Button
 ```
 css:
@@ -223,4 +320,13 @@ function increment() {
 
 html:
 <button id="btn" onClick="increment()">0</button>
+```
+
+### Buttons Container
+```
+```
+
+# Day 9
+### Binary Calculator
+```
 ```

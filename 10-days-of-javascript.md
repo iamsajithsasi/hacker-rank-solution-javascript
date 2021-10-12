@@ -1,12 +1,13 @@
-### Day 0: Hello, World!
+# Day 0
+### Hello, World!
 ```
 function greeting(parameterVariable) {
     console.log('Hello, World!');
     console.log(parameterVariable); 
 }
 ```
-
-### Day 1: Data Types
+# Day 1
+### Data Types
 ```
 function getArea(length, width) {
     let area = length * width;
@@ -24,7 +25,7 @@ function getPerimeter(length, width) {
 
 ```
 
-### Day 1: Functions
+### Functions
 
 Implement a function named factorial that has one parameter: an integer, n. It must return the value of n! (i.e.,  factorial).
 
@@ -38,7 +39,7 @@ function factorial(n) {
 }
 ```
 
-### Day 1: Let and Const
+### Let and Const
 ```
     let rad = readLine();
     const pi = Math.PI;
@@ -50,7 +51,8 @@ function factorial(n) {
     console.log(2 * pi * rad)
 ```
 
-### Day 2: Conditional Statements: If-Else
+# Day 2
+### Conditional Statements: If-Else
 
 ```
 function getGrade(score) {
@@ -74,7 +76,7 @@ function getGrade(score) {
 }
 ```
 
-### Day 2: Conditional Statements: Switch
+### Conditional Statements: Switch
 
 ```
 function getLetter(s) {
@@ -99,15 +101,18 @@ function getLetter(s) {
 }
 ```
 
-### Day 2: Loops
+### Loops
 
 ```
 function vowelsAndConsonants(s) {
     let vowels = "";
     let constants = "";
+
+    <!-- let vow_check = "aeiou"; // method 2 -->
     
     for(let i = 0; i < s.length; i++) {
       if(s[i] == "a" || s[i] == "e" || s[i] == "i" || s[i] == "o" || s[i] == "u") {
+      <!-- if(vow_check.includes(s[i])) { // method 2 -->
         vowels += s[i];
       } else {
         constants += s[i];          
@@ -122,24 +127,100 @@ function vowelsAndConsonants(s) {
 }
 ```
 
+# Day 3
+### Arrays
+
 ```
-function vowelsAndConsonants(s) {
-    let vowels = "";
-    let constants = "";
-    let vow_check = "aeiou"
+function getSecondLargest(nums) {
+    // Complete the function
     
-    for(let i = 0; i < s.length; i++) {
-      if(vow_check.includes(s[i])) {
-        vowels += s[i];
-      } else {
-        constants += s[i];          
-      }
-    }
-    
-    let combinedText = vowels.concat(constants);
-    for(let i = 0; i < combinedText.length; i++) {
-        console.log(combinedText[i])
-    }
-    
+    let nums_s = nums.sort((a,b) => a - b);
+    let st = [...new Set(nums_s)];
+    return st[st.length - 2]
 }
+```
+### Throw
+```
+function isPositive(a) {
+    if(a > 0) {
+        return 'YES'
+    } else if (a == 0) {
+        throw Error("Zero Error");
+    } else if (a < 0) {
+        throw Error("Negative Error");
+    }
+}
+```
+
+### Try, Catch, and Finally
+```
+function reverseString(s) {
+    try {
+     console.log(s.split("").reverse().join(""))
+    } catch(e) {
+        console.log(e.message);
+        console.log(s)
+    }
+}
+```
+# Day 4
+### Create a Rectangle Object
+
+```
+function Rectangle(a, b) {
+    let perm = 2*(a+b);
+    let area = a*b;
+    
+    return { 
+        length: a,
+        width: b,
+        perimeter: perm,
+        area: area
+    };
+}
+
+```
+
+### Classes
+
+```
+class Polygon {
+    
+    constructor(array) {
+        this.array = array;
+    }
+    
+    perimeter() {
+        let op = 0;
+        for (let i = 0; i < this.array.length; i++) {
+            op += this.array[i]
+        }
+        return op;
+    }
+}
+let triangle = new Polygon([3, 4, 5]);
+```
+# Day 5
+
+# Day 6
+
+# Day 7
+
+### Day 8: Create a Button
+```
+css:
+#btn {
+    width: 96px;
+    height: 48px;
+    font-size: 24px;
+}
+
+JS:
+let btn = document.querySelector('#btn');
+function increment() {
+    btn.innerHTML = parseInt(btn.innerHTML) + 1;
+}
+
+html:
+<button id="btn" onClick="increment()">0</button>
 ```

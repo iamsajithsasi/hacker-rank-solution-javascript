@@ -21,3 +21,15 @@ Day 1: Data Types
 // The 's' variable above should be printed first.
     console.log(s + str)
 ```
+
+Day 2: Operators
+
+```
+function solve(meal_cost, tip_percent, tax_percent) {
+    // Write your code here
+    
+    let mc = meal_cost + ((tip_percent / 100) * meal_cost) + ((tax_percent / 100) * meal_cost) 
+    
+    console.log(Math.round(mc));
+}
+```

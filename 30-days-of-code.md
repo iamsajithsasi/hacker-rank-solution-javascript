@@ -1,4 +1,4 @@
-Day 1: Data Types
+### Day 1: Data Types
 
 ```
 // Declare second integer, double, and String variables.
@@ -22,7 +22,7 @@ Day 1: Data Types
     console.log(s + str)
 ```
 
-Day 2: Operators
+### Day 2: Operators
 
 ```
 function solve(meal_cost, tip_percent, tax_percent) {
@@ -31,5 +31,23 @@ function solve(meal_cost, tip_percent, tax_percent) {
     let mc = meal_cost + ((tip_percent / 100) * meal_cost) + ((tax_percent / 100) * meal_cost) 
     
     console.log(Math.round(mc));
+}
+```
+### Day 3: Intro to Conditional Statements
+
+```
+function main() {
+    const N = parseInt(readLine().trim(), 10);
+    if(N % 2 == 0) {
+        // even
+        if((N >= 2 && N <= 5) || (N > 20)) {
+            console.log("Not Weird")
+        } else {
+            console.log("Weird")        
+        }
+    } else {
+        // odd
+        console.log("Weird")
+    }
 }
 ```

@@ -21,9 +21,6 @@ SELECT NAME FROM CITY WHERE COUNTRYCODE = 'JPN';
 // Weather Observation Station 1
 SELECT CITY, STATE FROM STATION;
 
-// Weather Observation Station 2
-
-
 // Weather Observation Station 3
 SELECT DISTINCT CITY FROM STATION WHERE ID % 2 = 0;
 
@@ -86,4 +83,71 @@ SELECT CASE
             ELSE 'Not A Triangle'
         END
 FROM TRIANGLES;
+
+
+// The PADS
+SELECT CONCAT(m.Name, "(", m.Title ,")") FROM (
+    SELECT OCCUPATIONS.*, UPPER(LEFT(Occupation, 1)) AS Title FROM OCCUPATIONS
+) AS m ORDER BY m.Name;
+(or)
+SELECT CONCAT( Name , "(" , SUBSTR(Occupation, 1, 1) , ")" ) As Title FROM OCCUPATIONS ORDER BY Title;
+
+SELECT CONCAT("There are a total of ", COUNT(Occupation), " ", Lower(Occupation), "s.") FROM OCCUPATIONS GROUP BY Occupation ORDER BY COUNT(Occupation), Occupation;
+```
+
+### Aggregation
+```
+// Revising Aggregations - The Count Function
+SELECT COUNT(ID) FROM CITY WHERE POPULATION > 100000;
+
+// Revising Aggregations - The Sum Function
+SELECT SUM(POPULATION) FROM CITY WHERE DISTRICT = 'California';
+
+// Revising Aggregations - Averages
+SELECT AVG(POPULATION) FROM CITY WHERE DISTRICT = 'California';
+
+// Weather Observation Station 2
+SELECT ROUND(SUM(LAT_N), 2), ROUND(SUM(LONG_W), 2) FROM STATION;
+
+// Weather Observation Station 13
+SELECT ROUND(SUM(LAT_N), 4) FROM STATION WHERE LAT_N > 38.7880 AND LAT_N < 137.2345;
+SELECT ROUND(SUM(LAT_N), 4) FROM STATION WHERE LAT_N BETWEEN 38.7880 AND 137.2345;
+
+// Weather Observation Station 14
+SELECT ROUND(MAX(LAT_N), 4) FROM STATION WHERE LAT_N < 137.2345;
+
+// Weather Observation Station 15
+SELECT ROUND(LONG_W, 4) FROM STATION WHERE LAT_N = (
+    SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345
+);
+
+// Weather Observation Station 16
+SELECT ROUND(MIN(LAT_N), 4) FROM STATION WHERE LAT_N > 38.7880;
+
+// Weather Observation Station 17
+SELECT ROUND(LONG_W,4) FROM STATION WHERE LAT_N = (
+    SELECT MIN(LAT_N) FROM STATION WHERE LAT_N > 38.7780
+);
+
+// Weather Observation Station 18
+SELECT ROUND((MAX(LAT_N) - MIN(LAT_N)) + (MAX(LONG_W) - MIN(LONG_W)), 4) FROM STATION;
+
+
+// Average Population
+SELECT FLOOR(AVG(POPULATION)) FROM CITY;
+
+// Japan Population
+SELECT SUM(POPULATION) FROM CITY WHERE COUNTRYCODE = 'JPN';
+
+// Population Density Difference
+SELECT (MAX(POPULATION) - MIN(POPULATION)) FROM CITY;
+
+// The Blunder
+SELECT CEIL(AVG(Salary) - AVG(REPLACE(Salary, 0, ""))) FROM EMPLOYEES;
+
+// Top Earners
+SELECT MAX(months * salary), COUNT(*) FROM Employee WHERE months * salary = (
+    SELECT MAX(months * salary) FROM Employee
+);
+
 ```

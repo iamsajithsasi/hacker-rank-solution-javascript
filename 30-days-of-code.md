@@ -1,4 +1,4 @@
-### Day 1: Data Types
+## Day 1: Data Types
 
 ```
 // Declare second integer, double, and String variables.
@@ -22,7 +22,7 @@
     console.log(s + str)
 ```
 
-### Day 2: Operators
+## Day 2: Operators
 
 ```
 function solve(meal_cost, tip_percent, tax_percent) {
@@ -33,7 +33,7 @@ function solve(meal_cost, tip_percent, tax_percent) {
     console.log(Math.round(mc));
 }
 ```
-### Day 3: Intro to Conditional Statements
+## Day 3: Intro to Conditional Statements
 
 ```
 function main() {
@@ -52,9 +52,11 @@ function main() {
 }
 ```
 
-### Day 4: 
+## Day 4: Day 4: Class vs. Instance
+```
+```
 
-### Day 5: Loops
+## Day 5: Loops
 
 ```
 function main() {
@@ -64,4 +66,124 @@ function main() {
         console.log(n + " x " + i + " = " + n * i);
     }
 }
+```
+
+## Day 6: Let's Review
+
+```
+```
+
+## Day 7: Arrays
+
+```
+```
+
+## Day 8: Dictionaries and Maps
+
+```
+```
+
+## Day 9: Recursion 3
+
+```
+```
+
+## Day 10: Binary Numbers
+
+```
+```
+
+## Day 11: 2D Arrays
+
+```
+```
+
+## Day 12: Inheritance
+
+```
+```
+
+## Day 13: Abstract Classes
+
+```
+```
+
+## Day 14: Scope
+
+```
+```
+
+## Day 15: Linked List
+
+```
+```
+
+## Day 16: Exceptions - String to Integer
+
+```
+```
+
+## Day 17: More Exceptions
+
+```
+```
+
+## Day 18: Queues and Stacks
+
+```
+```
+
+## Day 19: Interfaces
+
+```
+```
+
+## Day 20: Sorting
+
+```
+```
+
+## Day 21: Generics
+
+```
+```
+
+## Day 22: Binary Search Trees
+
+```
+```
+
+## Day 23: BST Level-Order Traversal
+
+```
+```
+
+## Day 24: More Linked Lists
+
+```
+```
+
+## Day 25: Running Time and Complexity
+
+```
+```
+
+## Day 26: Nested Logic
+
+```
+```
+
+## Day 27: Testing
+
+```
+```
+
+## Day 28: RegEx, Patterns, and Intro to Databases
+
+```
+```
+
+## Day 29: Bitwise AND
+
+```
 ```

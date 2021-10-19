@@ -71,11 +71,34 @@ function main() {
 ## Day 6: Let's Review
 
 ```
+function processData(input) {
+    //Enter your code here
+    
+    let str = input.split("\n");
+    let corr = str.shift();
+    
+    str.forEach(string => {
+        let evenStr = "";
+        let oddStr = "";
+        for(let i = 0; i < string.length; i++) {
+            if( i % 2 == 0) {
+                evenStr += string[i]
+            } else {
+                oddStr += string[i]                
+            }
+        }
+        console.log(evenStr + " " + oddStr)
+    })
+    
+}
 ```
 
 ## Day 7: Arrays
 
 ```
+function main() {
+    console.log(arr.reverse().join(" "))
+}
 ```
 
 ## Day 8: Dictionaries and Maps

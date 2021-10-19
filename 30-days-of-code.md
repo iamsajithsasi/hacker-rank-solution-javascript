@@ -54,6 +54,29 @@ function main() {
 
 ## Day 4: Day 4: Class vs. Instance
 ```
+function Person(initialAge) {
+    this.age = initialAge;
+
+    if (initialAge < 0) {
+        console.log('Age is not valid, setting age to 0.');
+        this.age = 0;
+    }
+
+    this.amIOld = function () {
+        if (this.age < 13) {
+            console.log('You are young.');
+        } else if (this.age < 18) {
+            console.log('You are a teenager.')
+        } else {
+            console.log('You are old.')
+        }
+    };
+
+    this.yearPasses = function () {
+        // Increment the age of the person in here
+        this.age++;
+    };
+}
 ```
 
 ## Day 5: Loops

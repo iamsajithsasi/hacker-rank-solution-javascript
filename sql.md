@@ -1,3 +1,5 @@
+# Working Platform:- MySQL
+
 ### Basic Select
 ```
 // Revising the Select Query I
@@ -196,6 +198,15 @@ SELECT
     , G.Grade, S.Marks FROM Students S, Grades G
 WHERE S.Marks BETWEEN G.Min_Mark AND G.Max_Mark
 ORDER BY G.Grade DESC, S.Name;
+```
 
+### Alternative Queries
+```
+// Draw The Triangle 1
+SET @COUNT_REPEAT:=21; 
+SELECT REPEAT('* ', @COUNT_REPEAT:= @COUNT_REPEAT - 1) FROM INFORMATION_SCHEMA.TABLES;
 
+// Draw The Triangle 2
+SET @REPEAT_TIMES:='0';
+SELECT REPEAT('* ', @REPEAT_TIMES:=@REPEAT_TIMES+1) FROM INFORMATION_SCHEMA.TABLES WHERE @REPEAT_TIMES < 20;
 ```

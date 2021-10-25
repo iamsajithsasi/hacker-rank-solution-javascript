@@ -132,6 +132,11 @@ function main() {
 ## Day 9: Recursion 3
 
 ```
+function factorial(n) {
+    // Write your code here
+    if(n == 1) { return n }
+    return n * factorial(n-1);
+}
 ```
 
 ## Day 10: Binary Numbers

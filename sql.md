@@ -132,6 +132,15 @@ SELECT ROUND(LONG_W,4) FROM STATION WHERE LAT_N = (
 // Weather Observation Station 18
 SELECT ROUND((MAX(LAT_N) - MIN(LAT_N)) + (MAX(LONG_W) - MIN(LONG_W)), 4) FROM STATION;
 
+// Weather Observation Station 19
+SELECT 
+    ROUND(
+        SQRT(
+            POWER(MIN(LAT_N)-MAX(LAT_N),2) + POWER(MIN(LONG_W)-MAX(LONG_W),2)
+        )
+    ,4) 
+FROM STATION;
+
 
 // Average Population
 SELECT FLOOR(AVG(POPULATION)) FROM CITY;
@@ -149,5 +158,44 @@ SELECT CEIL(AVG(Salary) - AVG(REPLACE(Salary, 0, ""))) FROM EMPLOYEES;
 SELECT MAX(months * salary), COUNT(*) FROM Employee WHERE months * salary = (
     SELECT MAX(months * salary) FROM Employee
 );
+
+```
+
+### Basic Join
+```
+// Population Census
+SELECT SUM(t.POPULATION) FROM CITY t
+JOIN COUNTRY y
+ON t.CountryCode = y.Code
+WHERE y.CONTINENT = 'Asia';
+
+// African Cities
+SELECT t.NAME FROM CITY t
+JOIN COUNTRY y
+ON t.CountryCode = y.Code
+WHERE y.CONTINENT = 'Africa';
+
+// Average Population of Each Continent
+SELECT y.CONTINENT, FLOOR(AVG(t.POPULATION)) FROM CITY t
+JOIN COUNTRY y
+ON t.CountryCode = y.Code
+GROUP BY y.CONTINENT;
+
+// The Report
+SELECT IF(G.Grade > 7, S.Name, NULL), G.Grade, S.Marks FROM Students S, Grades G
+WHERE S.Marks BETWEEN G.Min_Mark AND G.Max_Mark
+ORDER BY G.Grade DESC, S.Name;
+
+(or)
+
+SELECT 
+    CASE 
+        WHEN G.Grade > 7 THEN S.Name
+        ELSE NULL
+    END
+    , G.Grade, S.Marks FROM Students S, Grades G
+WHERE S.Marks BETWEEN G.Min_Mark AND G.Max_Mark
+ORDER BY G.Grade DESC, S.Name;
+
 
 ```

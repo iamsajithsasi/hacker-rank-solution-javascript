@@ -142,6 +142,27 @@ function factorial(n) {
 ## Day 10: Binary Numbers
 
 ```
+function main() {
+    const n = parseInt(readLine().trim(), 10);
+    
+    let bin_num = n.toString(2); // convert to binary number
+    let op = [0];
+    let idx = 0;
+    
+    if(bin_num.length > 0) {
+        for(let i = 0; i < bin_num.length; i++) {
+            if(bin_num[i] == 1) {
+                op[idx] += 1
+            } else {
+                op.push(0)
+                idx += 1
+            }
+        }
+    }
+    
+    let max = Math.max(...op);
+    console.log(max)
+}
 ```
 
 ## Day 11: 2D Arrays
@@ -152,11 +173,48 @@ function factorial(n) {
 ## Day 12: Inheritance
 
 ```
+class Student extends Person {
+    constructor(firstName, lastName, id, scores = []) {
+        super(firstName, lastName, id);                    
+        this.scores = scores;           
+    }
+
+    calculate() {    
+        const totalItems = this.scores.length;
+        var avg = this.scores.reduce((total,current) => total + current) / totalItems;
+        
+        if(avg>=90) {
+            return 'O';
+        } else if(avg >=80){
+            return 'E';
+        } else if(avg >=70){
+            return 'A';
+        } else if(avg >=55){
+            return 'P';
+        } else if(avg >=40){
+            return 'D';
+        } else {
+            return 'T';
+        }
+    }
+}
 ```
 
 ## Day 13: Abstract Classes
 
 ```
+class MyBook extends Book {
+    constructor(title, author, price) {
+        super(title, author);
+        this.price = price;
+    }
+
+    display() {
+        console.log("Title:", this.title);
+        console.log("Author:", this.author);
+        console.log("Price:", this.price);
+    }
+}
 ```
 
 ## Day 14: Scope
@@ -167,6 +225,24 @@ function factorial(n) {
 ## Day 15: Linked List
 
 ```
+this.insert=function(head,data){
+    //complete this method
+    let node = new Node(data);
+
+    if (!head) {
+        head = node;
+    } else {
+        let current = head;
+
+        while (current.next != null) {
+            current = current.next;
+        }
+
+        current.next = node;
+    }
+
+    return head;
+};
 ```
 
 ## Day 16: Exceptions - String to Integer

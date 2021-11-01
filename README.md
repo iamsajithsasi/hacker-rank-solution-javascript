@@ -10,3 +10,17 @@
 
 ### Certify
 1. [SQL Basics](sql-basics-cert-test.md)
+
+### Algorithms
+1. [Bubble Sort](algorithms.md)
+2. 
+
+### Other challenges
+1. Fibonacci Series
+2. Knapsack
+3. Longest Common Subsequence
+4. Range sum making queries without updates
+5. Frog's staircase to Heaven Problem
+6. Grid Walking Problem
+7. Stock Buy Sell Problem
+8. The Coin Change Making Problem

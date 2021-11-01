@@ -21,3 +21,54 @@ while not isSorted:
 
 print("sorted array", array)
 ```
+
+### Binary Search
+```
+def binarySearch(array, target):
+  return binarySearchHelper(array, target, 0, len(array) - 1  )
+
+binarySearchHelper(array, target, left, right):
+  if left > right:
+    return -1
+  
+  mid = (left + right) // 2
+  curreNum = array[mid]
+
+  if mid == target:
+    return mid
+  elif mid < target:
+    return binarySearchHelper(array, target, left, middle - 1)
+  else:
+    return binarySearchHelper(array, target, middle + 1, right)
+```
+
+### Two Number Of Sum
+```
+# if array is not sorted
+def twoNumberSum(array, target):
+  nums = {}
+  for num in array:
+    matchNum = target - num
+    if matchNum in nums:
+      return [matchNum, num]
+    else:
+      nums[num] = True
+  return []
+
+# if array is sorted
+def twoNumberSum(array, target):
+  array.sort()
+  left = 0
+  right = len(array - 1)
+
+  while left < right:
+    currSum = array[left] + array[right]
+    if currSum == target:
+      return [array[left], array[right]]
+    elif currSum < target
+      left += 1
+    else currSum > target
+      right -= 1
+
+  return []
+```

@@ -25,18 +25,18 @@ print("sorted array", array)
 ### Binary Search
 ```
 def binarySearch(array, target):
-  return binarySearchHelper(array, target, 0, len(array) - 1  )
+  return binarySearchHelper(array, target, 0, len(array) - 1)
 
 binarySearchHelper(array, target, left, right):
   if left > right:
     return -1
   
   mid = (left + right) // 2
-  curreNum = array[mid]
+  currNum = array[mid]
 
-  if mid == target:
+  if currNum == target:
     return mid
-  elif mid < target:
+  elif currNum < target:
     return binarySearchHelper(array, target, left, middle - 1)
   else:
     return binarySearchHelper(array, target, middle + 1, right)

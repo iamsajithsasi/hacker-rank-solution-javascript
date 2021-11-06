@@ -11,9 +11,10 @@
 ### Certify
 1. [SQL Basics](sql-basics-cert-test.md)
 
-### Algorithms
-1. [Bubble Sort](algorithms.md)
-2. 
+### [Algorithms](algorithms.md)
+1. Bubble Sort
+2. Binary Search
+3. Two Number Of Sum
 
 ### Other challenges
 1. Fibonacci Series
